@@ -3,7 +3,7 @@
 
 ```
 docker --version
-pip install "fastapi[standard]"
+pip install "fastapi[all]"
 fastapi run main.py
 
 
