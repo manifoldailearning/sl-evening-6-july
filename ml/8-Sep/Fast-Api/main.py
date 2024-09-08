@@ -2,8 +2,9 @@ from fastapi import FastAPI
 import joblib
 from pydantic import BaseModel
 import pandas as pd
+import uvicorn
 
-final_model = joblib.load("final_model.joblib")
+final_model = joblib.load("final_model.joblib") # load the model
 
 app = FastAPI()
 
@@ -45,7 +46,7 @@ def post_demo(loan_details: LoanPred):
 	}
 
     df = pd.DataFrame([new_data])
-    prediction = final_model.predict(df)
+    prediction = final_model.predict(df) # prediction
     if prediction[0] == 0:
         pred = 'Rejected'
     else:
