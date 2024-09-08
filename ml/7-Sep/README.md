@@ -16,11 +16,27 @@ docker ps -a
 docker run -it busybox sh
 docker rm <container_id>
 ```
+# 1.1 Docker installation commands in EC2
+
+```
+sudo yum update -y
+sudo amazon-linux-extras install docker
+sudo service docker start
+sudo systemctl start docker
+sudo service docker status
+sudo groupadd docker
+sudo usermod -a -G docker ec2-user
+newgrp docker
+docker —-version
+```
 
 # 2. Hands On
 
 
 ```
+docker build -t manifoldailearning/nginxdemo .
+
+
 docker run -d -P --name catgif manifoldailearning/catgif
 docker ps
 docker port catgif
