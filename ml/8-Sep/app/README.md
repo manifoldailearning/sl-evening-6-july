@@ -35,7 +35,8 @@ docker —-version
 
 ```
 docker build -t manifoldailearning/nginxdemo .
-
+docker run -p 8000:80 manifoldailearning/nginxdemo
+docker push manifoldailearning/nginxdemo
 
 docker run -d -P --name catgif manifoldailearning/catgif
 docker ps
